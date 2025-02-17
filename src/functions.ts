@@ -1,10 +1,12 @@
+//I completed this assignment before it had to be re-forked, so I just copy/pasted my solutions from the local repo I still had
+
 /**
  * Consumes a single temperature in Fahrenheit (a number) and converts to Celsius
  * using this formula:
  *      C = (F - 32) * 5/9
  */
 export function fahrenheitToCelius(temperature: number): number {
-    return 0;
+    return (temperature - 32) * (5 / 9);
 }
 
 /**
@@ -12,7 +14,13 @@ export function fahrenheitToCelius(temperature: number): number {
  * if the number is greater than zero.
  */
 export function add3(first: number, second: number, third: number): number {
-    return 0;
+    let sum: number = 0;
+    [first, second, third].forEach((num) => {
+        if (num > 0) {
+            sum += num;
+        }
+    });
+    return sum;
 }
 
 /**
@@ -20,7 +28,7 @@ export function add3(first: number, second: number, third: number): number {
  * mark added to the end.
  */
 export function shout(message: string): string {
-    return "";
+    return message.toUpperCase() + "!";
 }
 
 /**
@@ -28,7 +36,7 @@ export function shout(message: string): string {
  * mark. Do not use an `if` statement in solving this question.
  */
 export function isQuestion(message: string): boolean {
-    return true;
+    return message[message.length - 1] === "?";
 }
 
 /**
@@ -37,5 +45,9 @@ export function isQuestion(message: string): boolean {
  * upper or lower case), then return `false`. Otherwise, return `null`.
  */
 export function convertYesNo(word: string): boolean | null {
-    return true;
+    word = word.toLowerCase();
+    if (word !== "yes" && word !== "no") {
+        return null;
+    }
+    return word === "yes" ? true : false;
 }
